@@ -13,16 +13,21 @@ const connection = mysql.createConnection({
 
 
 
-queryAllProducts();
+
+
+
+connection.connect(function(err){
+    if (err) throw err; 
+    console.log(`connected as id ${connection.threadId}`); 
+    queryAllProducts();
+}); 
     
     
 
 
 function queryAllProducts() {
 
-    connection.connect(function(err){
-        if (err) throw err; 
-        console.log(`connected as id ${connection.threadId}`); 
+    
     
     connection.query("SELECT * FROM `products`", function (err, res) {
         if (err) throw err; 
@@ -36,7 +41,7 @@ function queryAllProducts() {
         
             
     });
-});
+
     
 }
 
@@ -70,9 +75,26 @@ function productSelection() {
 
             if (purchaseAmount <= res[0].stock_quantity) {
 
-                totalPrice = purchaseAmount * res[i].price; 
+                let totalPrice = purchaseAmount * res[i].price; 
+                let remainingQuantity = res[i].stock_quantity - purchaseAmount;
 
-                console.log(`Your total is: ${totalPrice}, Thank you for shopping with us`);
+                console.log(`Your total is: ${totalPrice}, Thank you for shopping with us!`);
+                
+                connection.query("UPDATE `products` SET `stock_quantity` = ? WHERE `item_id` = ?" , [remainingQuantity, user.productID], function(err, res) {
+                
+
+                console.log (`This is the updated inventory!`)
+
+                console.log(remainingQuantity); 
+
+                queryAllProducts();
+
+
+
+              });
+
+        
+
             } else {
                 console.log(`Sorry, we do not have enough ${res[i].product_name} in stock to fulfill this order` );
             }
@@ -81,15 +103,20 @@ function productSelection() {
 
          
 
-        
+   
 
             
     }); 
 
+
+    
+       
+    
+
         
     
     console.log(query.sql);
-    connection.end();  
+    //connection.end();  
      
  
 
