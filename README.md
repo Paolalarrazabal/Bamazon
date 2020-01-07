@@ -18,10 +18,12 @@ Bamazon is an Amazon-like storefront app that utilizes MySQL and Inquirer npm pa
 
 ### The Node app prompts the user with two questions. 
 
+The first question asks the customer for the product ID, which is located in the first column of the products table. 
+
 
 ![](images/ss1.png)
 
-After the customer specifies the product ID (located in the first column of the products table) Bamazon will ask how many units of the product they would like to buy. 
+After the customer specifies the product ID Bamazon will ask how many units of the product they would like to buy. 
 
 ![](images/ss2.png)
 
