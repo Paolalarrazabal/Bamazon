@@ -19,22 +19,22 @@ Bamazon is an Amazon-like storefront app that utilizes MySQL and Inquirer npm pa
 ### The Node app prompts the user with two questions. 
 
 ![Screenshot 1]
-(gifs\screenshots/ss1.png)
+(https://raw.githubusercontent.com/Paolalarrazabal/Bamazon/master/gifs%5Cscreenshots/ss1.png)
 
 After the customer specifies the product ID (located in the first column of the products table) Bamazon will ask how many units of the product they would like to buy. 
 
 ![Screenshot 2]
-(gifs\screenshots/ss2.png)
+(https://raw.githubusercontent.com/Paolalarrazabal/Bamazon/master/gifs%5Cscreenshots/ss2.png)
 
 Bamazon will fullfil the order as long as there is enough items in stock. Bamazon also, informs the customer with how much their total is, what they ordered and an updated inventory. The app will also prompt the customer again to make another purchase. 
 
 ![Screenshot 3]
-(gifs\screenshots/ss3.png)
+(https://raw.githubusercontent.com/Paolalarrazabal/Bamazon/master/gifs%5Cscreenshots/ss3.png)
 
 Keep in mind that if the customer requests more items than what is in stock, then the app will prevent the order from being processed. as shown below. 
 
 ![Screenshot 4]
-(gifs\screenshots/ss4.png)
+(https://raw.githubusercontent.com/Paolalarrazabal/Bamazon/master/gifs%5Cscreenshots/ss4.png)
 
 ### :large_orange_diamond: Getting Started 
 
